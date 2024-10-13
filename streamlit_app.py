@@ -17,9 +17,6 @@ option = st.sidebar.radio(
     ]
 )
 
-# Sidebar slider (visible in specific options)
-number = st.sidebar.slider("Select a number", 1, 100, 50)
-
 # Main page content based on sidebar option
 if option == "Home":
     st.header("Home")
@@ -28,10 +25,6 @@ if option == "Home":
 elif option == "Show Welcome Message":
     st.header("Welcome to the Streamlit App!")
     st.write("This is a simple app demonstrating a sidebar with 6 options.")
-
-elif option == "Display Number":
-    st.header(f"You selected the number: {number}")
-    st.write("Use the slider in the sidebar to adjust the number.")
 
 elif option == "User Details Form":
     st.header("User Details Form")
