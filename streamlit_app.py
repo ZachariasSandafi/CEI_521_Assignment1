@@ -1,46 +1,48 @@
 import streamlit as st
+import widget1
+import widget2
+import widget3
+import widget4
+import widget5
+import widget6
 
-# Title for the main page
-st.title("Streamlit App with 6 Sidebar Options")
+# Set the title for the home page
+st.title("CEI_521 Assignment 1")
 
-# Sidebar options as radio buttons
+
 st.sidebar.title("Navigation Menu")
-option = st.sidebar.radio(
+option = st.sidebar.selectbox(
     "Choose an option:",
     [
-        "Home",
-        "Show Welcome Message",
-        "Display Number",
-        "User Details Form",
-        "Show a Chart",
-        "Contact Us"
+        "Project Overview",
+        "Widget 1",
+        "Widget 2",
+        "Widget 3",
+        "Widget 4",
+        "Widget 5",
+        "Widget 6"
     ]
 )
 
-# Main page content based on sidebar option
-if option == "Home":
-    st.header("Home")
-    st.write("Welcome to the homepage! Choose an option from the sidebar to explore more.")
+# Logic to load pages based on sidebar selection
+if option == "Project Overview":
+    st.header("Project Overview")
+    st.write("Welcome to the project overview! Choose a widget from the sidebar to explore.")
 
-elif option == "Show Welcome Message":
-    st.header("Welcome to the Streamlit App!")
-    st.write("This is a simple app demonstrating a sidebar with 6 options.")
+elif option == "Widget 1":
+    widget1.load_widget()
 
-elif option == "User Details Form":
-    st.header("User Details Form")
-    name = st.text_input("Enter your name:")
-    age = st.number_input("Enter your age:", 0, 120, 25)
-    if st.button("Submit"):
-        st.write(f"Hello, {name}! You are {age} years old.")
+elif option == "Widget 2":
+    widget2.load_widget()
 
-elif option == "Show a Chart":
-    st.header("Sample Chart")
-    chart_data = {
-        'x': [1, 2, 3, 4, 5],
-        'y': [10, 20, 30, 40, 50]
-    }
-    st.line_chart(chart_data)
+elif option == "Widget 3":
+    widget3.load_widget()
 
-elif option == "Contact Us":
-    st.header("Contact Us")
-    st.write("For inquiries, please reach out at: contact@example.com")
+elif option == "Widget 4":
+    widget4.load_widget()
+
+elif option == "Widget 5":
+    widget5.load_widget()
+
+elif option == "Widget 6":
+    widget6.load_widget()
