@@ -42,8 +42,8 @@ def load_widget():
             with st.expander("Sentence Analysis", expanded=False):
                 st.subheader("Sentence Analysis")
                 st.write(f"**Sentence Count**: {result.get('sentence_count', 'N/A')}")
-                st.write(f"**Longest Sentence(s)**: {', '.join(result.get('longest_sentences', []))}")
-                st.write(f"**Shortest Sentence(s)**: {', '.join(result.get('shortest_sentences', []))}")
+                st.write(f"**Longest Sentence(s) (in words)**: {', '.join(result.get('longest_sentences', []))}")
+                st.write(f"**Shortest Sentence(s) (in words)**: {', '.join(result.get('shortest_sentences', []))}")
                 st.write(f"**Average Sentence Length (in words)**: {result.get('avg_sentence_length', 'N/A'):.2f}")
 
         else:
