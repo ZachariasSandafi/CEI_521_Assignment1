@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import json
 
-# URL of the AWS Lambda function's API Gateway endpoint (replace with your actual URL)
+# URL of the AWS Lambda function's API Gateway endpoint
 LAMBDA_URL = "https://g8qjzmodh4.execute-api.eu-north-1.amazonaws.com/default/textAnalysisLambda"
 
 def load_widget():
@@ -19,34 +19,33 @@ def load_widget():
             result = analyze_text(user_input)
 
             # Organizing the output into different sections
-            
-            # Character and Word Count
-            st.subheader("Character & Word Count")
-            st.write(f"**Character Count**: {result.get('char_count', 'N/A')}")
-            st.write(f"**Word Count**: {result.get('word_count', 'N/A')}")
-            st.write(f"**Unique Word Count**: {result.get('unique_word_count', 'N/A')}")
 
             # Word Data Section
-            st.subheader("Word Analysis")
-            
-            # Display sorted word frequency
-            st.write("**Word Frequency (Sorted by Most Common)**:")
-            word_frequency = result.get('word_frequency', {})
-            for word, frequency in word_frequency.items():
-                st.write(f"{word.capitalize()}: {frequency}")
-            
-            # Display longest and shortest words
-            st.write(f"**Longest Word(s)**: {', '.join(result.get('longest_words', []))}")
-            st.write(f"**Shortest Word(s)**: {', '.join(result.get('shortest_words', []))}")
-            st.write(f"**Average Word Length**: {result.get('avg_word_length', 'N/A'):.2f}")
+            with st.expander("Word Analysis", expanded=False):
+                st.subheader("Word Analysis")
+                st.write(f"**Character Count**: {result.get('char_count', 'N/A')}")
+                st.write(f"**Word Count**: {result.get('word_count', 'N/A')}")
+                st.write(f"**Unique Word Count**: {result.get('unique_word_count', 'N/A')}")
+                st.write(f"**Longest Word(s)**: {', '.join(result.get('longest_words', []))}")
+                st.write(f"**Shortest Word(s)**: {', '.join(result.get('shortest_words', []))}")
+                st.write(f"**Average Word Length**: {result.get('avg_word_length', 'N/A'):.2f}")
+
+            # Word Frequency Data Section 
+            with st.expander("Word Frequency", expanded=False):
+                # Display sorted word frequency
+                st.subheader("Word Frequency (Sorted by Most Common)")
+                word_frequency = result.get('word_frequency', {})
+                for word, frequency in word_frequency.items():
+                    st.write(f"{word.capitalize()}: {frequency}")
 
             # Sentence Data Section
-            st.subheader("Sentence Analysis")
-            
-            st.write(f"**Sentence Count**: {result.get('sentence_count', 'N/A')}")
-            st.write(f"**Longest Sentence(s) (in words)**: {', '.join(result.get('longest_sentences', []))}")
-            st.write(f"**Shortest Sentence(s) (in words)**: {', '.join(result.get('shortest_sentences', []))}")
-            st.write(f"**Average Sentence Length (in words)**: {result.get('avg_sentence_length', 'N/A'):.2f}")
+            with st.expander("Sentence Analysis", expanded=False):
+                st.subheader("Sentence Analysis")
+                st.write(f"**Sentence Count**: {result.get('sentence_count', 'N/A')}")
+                st.write(f"**Longest Sentence(s)**: {', '.join(result.get('longest_sentences', []))}")
+                st.write(f"**Shortest Sentence(s)**: {', '.join(result.get('shortest_sentences', []))}")
+                st.write(f"**Average Sentence Length (in words)**: {result.get('avg_sentence_length', 'N/A'):.2f}")
+
         else:
             st.write("Please enter some text to analyze.")
 
