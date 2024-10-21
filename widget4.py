@@ -15,12 +15,20 @@ headers = {
 # Function to fetch all breeds
 def get_breeds():
     response = requests.get(f"{BASE_URL}/breeds", headers=headers)
-    return response.json()
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Error fetching breeds: {response.status_code} - {response.text}")
+        return []
 
 # Function to fetch breed-specific images
 def get_breed_images(breed_id):
     response = requests.get(f"{BASE_URL}/images/search?breed_id={breed_id}&limit=3", headers=headers)  # Limit to 3 images
-    return response.json()
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Error fetching images: {response.status_code} - {response.text}")
+        return []
 
 # Function to display breed information
 def display_breed_info(breed):
