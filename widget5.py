@@ -49,7 +49,7 @@ def load_widget():
             st.markdown(f"**Explanation:** \n\n{explanation}")
 
     else:
-        st.error("Error fetching data from NASA APOD API. Please check your API key and try again.")
+        st.error("Error fetching data from NASA APOD API.")
 
 
 
