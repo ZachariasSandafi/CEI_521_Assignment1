@@ -38,8 +38,8 @@ def display_breed_images(images):
 
 # Function to load the widget
 def load_widget():
-    st.header("Widget 4")
-    st.write("This is the content of Widget 4.")
+    st.header("Widget 4: TheDogAPI")
+    st.write("This widget lets the user select or search for a dog breed and displays certain information and photos of the selected dog breed.")
     
     # Fetching breeds data
     breeds = get_breeds()
