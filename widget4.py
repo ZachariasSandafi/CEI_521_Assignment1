@@ -25,11 +25,11 @@ def get_breed_images(breed_id):
 # Function to display breed information
 def display_breed_info(breed):
     st.header(breed['name'])
-    st.write(f"**Breed Group**: {breed['breed_group']}")
-    st.write(f"**Temperament**: {breed['temperament']}")
-    st.write(f"**Life Span**: {breed['life_span']}")
-    st.write(f"**Height**: {breed['height']['metric']} cm")
-    st.write(f"**Weight**: {breed['weight']['metric']} kg")
+    st.write(f"**Breed Group**: {breed.get('breed_group', 'N/A')}")  
+    st.write(f"**Temperament**: {breed.get('temperament', 'N/A')}")
+    st.write(f"**Life Span**: {breed.get('life_span', 'N/A')}")
+    st.write(f"**Height**: {breed.get('height', {}).get('metric', 'N/A')} cm") 
+    st.write(f"**Weight**: {breed.get('weight', {}).get('metric', 'N/A')} kg")
 
 # Function to display breed images
 def display_breed_images(images):
