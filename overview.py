@@ -49,13 +49,13 @@ def load_overview():
     #### Widget 4: Dog Breeds Information
     This widget utilizes **TheDogAPI** to fetch and display information and images about various dog breeds.
     - **Purpose**: Users can search or select a breed, displaying details like breed group, temperament, life span, height, and weight.
-    - **Implementation**: After selecting a breed, an API request fetches breed-specific data, including images, and displays the data on the screen.
+    - **Implementation**: After selecting a breed, an API request fetches breed-specific data, including images. This data is displayed on the screen.
     - **Data Source**: TheDogAPI.
 
     #### Widget 5: Astronomy Picture of the Day
     Using NASA's **Astronomy Picture of the Day (APOD)** API, this widget retrieves an astronomical image or video and its description for a selected date.
     - **Purpose**: Users can select any date (starting from 1995-06-16, the beginning of the APOD service) to view NASA's featured astronomical media for that day.
-    - **Implementation**: After selecting a date, an API request fetches data for the Astronomy Picture of the Day on that specific date and display the image/video along with an explanation if it’s in the public domain. If it’s copyrighted, users are prompted to choose a different date.
+    - **Implementation**: After selecting a date, an API request fetches data for the Astronomy Picture of the Day on that specific date. The image/video and explanation are displayed if the specific media is in the public domain. If it’s copyrighted, users are prompted to choose a different date.
     - **Data Source**: NASA's APOD API.
 
     #### Widget 6: Text Analysis
