@@ -6,6 +6,7 @@ import widget3
 import widget4
 import widget5
 import widget6
+import overview
 
 # Set the title for the home page
 st.title("CEI_521 Assignment 1")
@@ -23,8 +24,7 @@ with st.sidebar:
 
 
 if option == "Project Overview":
-    st.header("Project Overview")
-    st.write("Welcome to the project overview! Choose a widget from the sidebar to explore.")
+    overview.load_overview()
 
 elif option == "Widget 1":
     widget1.load_widget()
