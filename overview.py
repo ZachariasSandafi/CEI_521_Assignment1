@@ -13,9 +13,9 @@ def load_overview():
     ### Responsibilities
                 
     - **Charalampos Kampourides** was responsible for the **non-interactive widgets**. These widgets, which do not require user input, include:
-      - **Widget 1**: 
-      - **Widget 2**: 
-      - **Widget 3**:             
+      - **Widget 1**: Personalized Welcome Message
+      - **Widget 2**: Chart Data
+      - **Widget 3**: Daily News Feed            
     
     <br>
                 
@@ -27,23 +27,23 @@ def load_overview():
     ### Widget Explanations
                 
     #### Non-Interactive Widgets by Charalampos:
-    #### Widget 1: 
-    small explanation....
-    - **Purpose**: 
-    - **Implementation**: 
-    - **Data Source**: 
+    #### Widget 1: Greetings
+    This widget is responsible for greeting the user with a unique message
+    - **Purpose**: To welcome users, displaying a different message based on parameters like date and time.
+    - **Implementation**: A POST request is made to the Google Cloud Platform serverless function, with the current date and time. The function returns the relevant message,
+    - **Data Source**: Custom GCP Serverless Function.
 
-    #### Widget 2: 
-    small explanation....    
-    - **Purpose**:
-    - **Implementation**:
-    - **Data Source**: 
+    #### Widget 2: Graphs
+    This Widget receives data from the back end and visualize it for the user.
+    - **Purpose**: To fetch data from a serverless back end and display them to the user in a visual way.
+    - **Implementation**: The function generates (or fetches from a database) data to be displayed by the application. The application displays the data alongside some statistics.
+    - **Data Source**: Custom GCP Serverless Function
 
-    #### Widget 3: 
-    small explanation....
-    - **Purpose**: 
-    - **Implementation**: 
-    - **Data Source**:
+    #### Widget 3: News Feed
+    The widget is using TheNewsAPI to display the latest news to the user.
+    - **Purpose**: Informing the user about the latest events internationally.
+    - **Implementation**: An API request is made fetching the latest articles for a given language (english). It is then displayed on screen alongside the title, image, url etc.
+    - **Data Source**: TheNewsAPI.
                 
     #### Interactive Widgets by Zacharias:
     #### Widget 4: Dog Breeds Information

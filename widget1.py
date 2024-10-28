@@ -5,7 +5,7 @@ import requests
 cloud_function_url = "https://europe-west4-ergasia-serverless.cloudfunctions.net/Greetings"
 
 def load_widget():
-    st.header("Widget 1")
+    st.header("Widget 1: Greetings")
     data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     response = greetings(data);
     """st.write("This is the content of Widget 1.")"""
