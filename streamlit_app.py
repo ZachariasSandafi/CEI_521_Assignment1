@@ -15,8 +15,8 @@ st.title("CEI_521 Assignment 1")
 with st.sidebar:
     option = option_menu(
         menu_title="Menu",
-        options=["Project Overview", "Widget 1", "Widget 2", "Widget 3", "Dog Breeds", "Astronomy Picture of the Day", "Text Analysis"],
-        icons=["file-text-fill", "1-circle-fill", "2-circle-fill", "3-circle-fill", "gitlab", "rocket-takeoff", "alphabet-uppercase"],  # Bootstrap icons
+        options=["Project Overview", "Example", "Widget 2", "Widget 3", "Dog Breeds", "Astronomy Picture of the Day", "Text Analysis"],
+        icons=["file-text-fill", "alarm", "2-circle-fill", "3-circle-fill", "gitlab", "rocket-takeoff", "alphabet-uppercase"],  # Bootstrap icons
         menu_icon="list",  
         default_index=0,  
     )
@@ -26,7 +26,7 @@ with st.sidebar:
 if option == "Project Overview":
     overview.load_overview()
 
-elif option == "Widget 1":
+elif option == "Example":
     widget1.load_widget()
 
 elif option == "Widget 2":
