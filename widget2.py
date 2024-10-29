@@ -5,7 +5,7 @@ import requests
 cloud_function_url = "https://europe-west4-ergasia-serverless.cloudfunctions.net/graphs"
 data = ""
 def load_widget():
-    st.header("Widget 2: Graphs")
+    st.header("Widget 2: Charts")
     response = graphs(data);
     """st.write("This is the content of Widget 2.")"""
 

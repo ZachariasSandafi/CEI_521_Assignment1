@@ -26,13 +26,13 @@ with st.sidebar:
 if option == "Project Overview":
     overview.load_overview()
 
-elif option == "Welcome":
+elif option == "Widget 1":
     widget1.load_widget()
 
-elif option == "Charts":
+elif option == "Widget 2":
     widget2.load_widget()
 
-elif option == "News Feed":
+elif option == "Widget 3":
     widget3.load_widget()
 
 elif option == "Dog Breeds":

@@ -5,7 +5,7 @@ import requests
 cloud_function_url = "https://europe-west4-ergasia-serverless.cloudfunctions.net/Greetings"
 
 def load_widget():
-    st.header("Widget 1: Greetings")
+    st.header("Widget 1: Welcome")
     data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     response = greetings(data);
     """st.write("This is the content of Widget 1.")"""
@@ -17,7 +17,10 @@ def greetings(data):
         
         # Check if the request was successful
         if response.status_code == 200:
-            st.write(response.text)
+            data = response.json()
+            st.write(str(data.get("message")))
+            st.write(str(data.get("dayMessage")))
+            st.write(str(data.get("seasonMessage")))
             return response  # Assuming the response is in JSON format
         else:
             return f"Error: {response.status_code}"
