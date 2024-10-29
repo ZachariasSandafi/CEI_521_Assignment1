@@ -19,13 +19,22 @@ def graphs(data):
             first = data.get("first")
             st.subheader("Assets")
             st.bar_chart(first)
-            st.write("Total: ")
-            st.write("Winner: " )
+            st.write("Total: " + str(data.get("totalFirst")))
+            st.write("Average: " + str(data.get("avgFirst")))
+            st.write("Highest: " + str(data.get("maxFirst")))
                      
-            st.subheader("Sallaries")
+            st.subheader("Salaries")
             st.line_chart(data.get("second"))
-            st.write("Total: ")
-            st.write("Winner: " )
+            st.write("Total: " + str(data.get("totalSecond")))
+            st.write("Average: " + str(data.get("avgSecond")))
+            st.write("Highest: " + str(data.get("maxSecond")))
+
+            st.subheader("Sales")
+            st.area_chart(data.get("Third"))
+            st.write("Total: " + str(data.get("totalThird")))
+            st.write("Average: " + str(data.get("avgThird")))
+            st.write("Highest: " + str(data.get("maxThird")))
+                     
 
             return response  # Assuming the response is in JSON format
         else:

@@ -13,9 +13,9 @@ def load_overview():
     ### Responsibilities
                 
     - **Charalampos Kampourides** was responsible for the **non-interactive widgets**. These widgets, which do not require user input, include:
-      - **Widget 1**: Personalized Welcome Message
-      - **Widget 2**: Chart Data
-      - **Widget 3**: Daily News Feed            
+      - **Widget 1**: Personalized Welcome Message (Google Cloud Run Function)
+      - **Widget 2**: Chart Data (Google Cloud Run Function)
+      - **Widget 3**: Daily News Feed (Online Service)            
     
     <br>
                 
@@ -27,13 +27,13 @@ def load_overview():
     ### Widget Explanations
                 
     #### Non-Interactive Widgets by Charalampos:
-    #### Widget 1: Greetings
+    #### Widget 1: Welcoming Message
     This widget is responsible for greeting the user with a unique message
     - **Purpose**: To welcome users, displaying a different message based on parameters like date and time.
     - **Implementation**: A POST request is made to the Google Cloud Platform serverless function, with the current date and time. The function returns the relevant message,
     - **Data Source**: Custom GCP Serverless Function.
 
-    #### Widget 2: Graphs
+    #### Widget 2: Charts
     This Widget receives data from the back end and visualize it for the user.
     - **Purpose**: To fetch data from a serverless back end and display them to the user in a visual way.
     - **Implementation**: The function generates (or fetches from a database) data to be displayed by the application. The application displays the data alongside some statistics.
